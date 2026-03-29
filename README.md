@@ -57,3 +57,7 @@ API directa: http://localhost:4000/api
 - `bonuses`
 
 El balance se calcula siempre por agregación del ledger (créditos - débitos), sin saldo hardcodeado.
+
+## Auditoría técnica
+
+- Ver análisis profundo en `docs/production-readiness-review.md`.
