@@ -9,6 +9,6 @@ export class UsersController {
   @UseGuards(JwtAuthGuard)
   @Get('me')
   me(@Req() req: { user: { sub: string } }) {
-    return this.usersService.findById(req.user.sub);
+    return this.usersService.getProfile(req.user.sub);
   }
 }

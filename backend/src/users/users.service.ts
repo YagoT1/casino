@@ -26,4 +26,17 @@ export class UsersService {
   listAll() {
     return this.usersRepo.find({ order: { createdAt: 'DESC' } });
   }
+  async getProfile(id: string) {
+    const user = await this.findById(id);
+    if (!user) return null;
+
+    return {
+      id: user.id,
+      email: user.email,
+      fullName: user.fullName,
+      birthDate: user.birthDate,
+      role: user.role,
+      createdAt: user.createdAt,
+    };
+  }
 }

@@ -61,3 +61,5 @@ El balance se calcula siempre por agregación del ledger (créditos - débitos),
 ## Auditoría técnica
 
 - Ver análisis profundo en `docs/production-readiness-review.md`.
+
+- Evaluación extendida: `docs/system-architecture-assessment-2026-03-30.md`.
