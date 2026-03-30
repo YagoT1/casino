@@ -6,26 +6,26 @@ export type LedgerType = 'deposit' | 'withdrawal' | 'bet' | 'win' | 'bonus';
 @Entity('ledger_transactions')
 export class LedgerTransaction {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @Column({ type: 'varchar' })
-  type: LedgerType;
+  type!: LedgerType;
 
   @Column({ type: 'varchar' })
-  direction: 'credit' | 'debit';
+  direction!: 'credit' | 'debit';
 
   @Column({ type: 'numeric', precision: 12, scale: 2 })
-  amount: string;
+  amount!: string;
 
   @Column({ nullable: true })
-  referenceId?: string;
+  referenceId!: string;
 
   @Column({ nullable: true })
-  metadata?: string;
+  metadata!: string;
 
   @CreateDateColumn()
-  createdAt: Date;
+  createdAt!: Date;
 
   @ManyToOne(() => User, (user) => user.transactions)
-  user: User;
+  user!: User;
 }

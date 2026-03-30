@@ -3,14 +3,14 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 @Entity('games')
 export class Game {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @Column({ unique: true })
-  slug: string;
+  slug!: string;
 
   @Column()
-  name: string;
+  name!: string;
 
   @Column({ default: true })
-  enabled: boolean;
+  enabled!: boolean;
 }

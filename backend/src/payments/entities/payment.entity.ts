@@ -4,23 +4,23 @@ import { User } from 'src/users/entities/user.entity';
 @Entity('payments')
 export class Payment {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @ManyToOne(() => User)
-  user: User;
+  user!: User;
 
   @Column()
-  provider: string;
+  provider!: string;
 
   @Column({ type: 'varchar' })
-  type: 'deposit' | 'withdrawal';
+  type!: 'deposit' | 'withdrawal';
 
   @Column({ type: 'numeric', precision: 12, scale: 2 })
-  amount: string;
+  amount!: string;
 
   @Column({ type: 'varchar', default: 'pending' })
-  status: 'pending' | 'approved' | 'rejected';
+  status!: 'pending' | 'approved' | 'rejected';
 
   @CreateDateColumn()
-  createdAt: Date;
+  createdAt!: Date;
 }

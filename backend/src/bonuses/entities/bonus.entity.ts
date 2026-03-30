@@ -4,23 +4,23 @@ import { User } from 'src/users/entities/user.entity';
 @Entity('bonuses')
 export class Bonus {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @ManyToOne(() => User, (user) => user.bonuses)
-  user: User;
+  user!: User;
 
   @Column()
-  name: string;
+  name!: string;
 
   @Column({ type: 'numeric', precision: 12, scale: 2 })
-  amount: string;
+  amount!: string;
 
   @Column({ type: 'int' })
-  rolloverMultiplier: number;
+  rolloverMultiplier!: number;
 
   @Column({ default: false })
-  consumed: boolean;
+  consumed!: boolean;
 
   @CreateDateColumn()
-  createdAt: Date;
+  createdAt!: Date;
 }

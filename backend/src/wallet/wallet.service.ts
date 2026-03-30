@@ -47,7 +47,7 @@ export class WalletService {
       .andWhere('tx.direction = :direction', { direction: 'debit' })
       .getRawOne<{ sum: string }>();
 
-    return Number(credits.sum) - Number(debits.sum);
+    return Number(credits?.sum || 0) - Number(debits?.sum || 0);
   }
 
   history(userId: string) {

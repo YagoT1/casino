@@ -6,35 +6,35 @@ import { Bonus } from 'src/bonuses/entities/bonus.entity';
 @Entity('users')
 export class User {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @Column({ unique: true })
-  email: string;
+  email!: string;
 
   @Column()
-  passwordHash: string;
+  passwordHash!: string;
 
   @Column()
-  fullName: string;
+  fullName!: string;
 
   @Column({ type: 'date' })
-  birthDate: string;
+  birthDate!: string;
 
   @Column({ default: 'player' })
-  role: 'player' | 'admin';
+  role!: 'player' | 'admin';
 
   @CreateDateColumn()
-  createdAt: Date;
+  createdAt!: Date;
 
   @UpdateDateColumn()
-  updatedAt: Date;
+  updatedAt!: Date;
 
   @OneToMany(() => LedgerTransaction, (tx) => tx.user)
-  transactions: LedgerTransaction[];
+  transactions!: LedgerTransaction[];
 
   @OneToMany(() => Bet, (bet) => bet.user)
-  bets: Bet[];
+  bets!: Bet[];
 
   @OneToMany(() => Bonus, (bonus) => bonus.user)
-  bonuses: Bonus[];
+  bonuses!: Bonus[];
 }
